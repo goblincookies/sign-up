@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1rem;
+
+    /* outline: 2px solid steelblue; */
+}
+body {
+    background-color: #201E1F;
+}
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
+    display: flex;
+}
+
+.background>img {
+    height: 100%;
+    width: 66%;
+    flex: 1;
+    display: block;
+    /* margin: auto; */
+    object-fit: cover;
+}
+.color-block {
+    width: 33%;
+    background-color: #201E1F;
+    padding: 5px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.img-credit {
+    margin: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #919191;
+    font-size: 0.65rem;
+}
+
+.sign-up {
+    position: absolute;
+    top:17%;
+    left:15%;
+    margin: auto;
+    width: 66%;
+    height: 70%;
+    background-color: white;
+    display: flex;
+}
+.logo-box {
+    width: 55%;
+    height: 100%;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+.word-mark {
+    color: #fff;
+    font-size: 12vw;
+    font-weight: 800;
+    font-style: italic;
+}
+.icon {
+    position: relative;
+    left: -4%;
+    height: 75%;
+    
+}
+.form {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    background-color: #fff;
+    padding: 3%;
+}
+h2 {
+    color: #EAEAEA;
+    font-size: 6vw;
+    font-weight: 800;
+    font-style: italic;
+    /* text-align: center; */
+}
