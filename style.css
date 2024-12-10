@@ -35,7 +35,7 @@ body {
     justify-content: end;
 }
 .img-credit {
-    margin: 10px;
+    margin: 1rem;
 }
 
 a{
@@ -47,15 +47,16 @@ a{
 .sign-up {
     position: absolute;
     top:17%;
-    left:15%;
+    left:22%;
     margin: auto;
-    width: 66%;
+    width: 56%;
     height: 70%;
     background-color: white;
     display: flex;
+    overflow: hidden;
 }
 .logo-box {
-    width: 55%;
+    width: 60%;
     height: 100%;
     background-color: pink;
     display: flex;
@@ -64,27 +65,111 @@ a{
 }
 .word-mark {
     color: #fff;
-    font-size: 12vw;
+    font-size: 11vw;
     font-weight: 800;
     font-style: italic;
 }
 .icon {
     position: relative;
     left: -4%;
-    height: 75%;
-    
+    height: 25vw;
 }
-.form {
+.frame {
+    height: 100%;
     position: relative;
     z-index: 1;
     flex: 1;
     background-color: #fff;
     padding: 3%;
+    display: flex;
+    gap: 1rem;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sec1,
+.sec2,
+.sec3 {
+    /* outline: 2px solid red; */
+}
+.sec2 {
+    height: 60%;
+    /* outline: 2px solid red; */
+    /* background-color: #919191; */
+    /* flex: 1; */
+}
+.form-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid green; */
+    justify-content: space-between;
+    /* align-items: center; */
+    /* align-items: space-between; */
+    /* gap: 1rem; */
+}
+.field-border {
+    padding: 1vh;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    outline: 1px solid #08AAFC;
+    border-radius: 0.5rem;
+}
+.field {
+    width: 100%;
+    /* outline: 2px solid salmon; */
+    display: flex;
+    flex-direction: column;
+    font-size: 2vh;
+    /* font-size: 1.2rem; */
+    font-weight: 800;
+}
+input {
+    /* outline: 2px solid salmon; */
+    padding: 0px;
+    margin: 0;
+    border: none;
+}
+.shift-up {
+    position: relative;
+    bottom: 0.5rem;
+}
+input::placeholder {
+    color: #08AAFC;
+}
+input:focus{
+    outline: none;
+}
+label {
+    visibility: hidden;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #08AAFC;
+    /* outline: 2px solid salmon; */
+}
+.field-icon {
+    border-right: 1px solid #201E1F;
+    /* outline: 2px solid salmon; */
+    width: 3rem;
+    height: 2rem;
+}
+button {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 2rem;
 }
 h2 {
+    /* outline: 2px solid salmon; */
     color: #EAEAEA;
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: 800;
     font-style: italic;
-    /* text-align: center; */
+    text-align: center;
+    /* margin-top: -1rem; */
+    /* padding-bottom: 1rem; */
+    /* justify-content: center; */
+}
+.p-med {
+    font-size: 0.8rem;
 }
