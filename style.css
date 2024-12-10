@@ -37,9 +37,10 @@ body {
 .img-credit {
     margin: 1rem;
 }
-
-a{
+a {
     text-decoration: none;
+}
+.credit{
     color: #919191;
     font-size: 0.65rem;
 }
@@ -58,7 +59,8 @@ a{
 .logo-box {
     width: 60%;
     height: 100%;
-    background-color: pink;
+    background-image: linear-gradient(to bottom right, #f92f78, #EA6FEF );
+    /* background-color: pink; */
     display: flex;
     align-items: center;
     padding-left: 1vw;
@@ -87,6 +89,11 @@ a{
     flex-direction: column;
     justify-content: space-between;
 }
+.sec1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 .sec1,
 .sec2,
 .sec3 {
@@ -102,27 +109,27 @@ a{
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* border: 2px solid green; */
     justify-content: space-between;
-    /* align-items: center; */
-    /* align-items: space-between; */
-    /* gap: 1rem; */
 }
 .field-border {
     padding: 1vh;
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    outline: 1px solid #08AAFC;
     border-radius: 0.5rem;
+    /* outline: 1px solid #EAEAEA; */
+}
+.active {
+    outline: 2px solid #08AAFC;
+}
+.issue {
+    outline: 2px solid #f92f78;
 }
 .field {
     width: 100%;
-    /* outline: 2px solid salmon; */
     display: flex;
     flex-direction: column;
-    font-size: 2vh;
-    /* font-size: 1.2rem; */
+    font-size: 2.2vh;
     font-weight: 800;
 }
 input {
@@ -155,8 +162,15 @@ label {
     height: 2rem;
 }
 button {
-    width: 100%;
-    height: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    background-image: linear-gradient(to bottom right, #EA6FEF, #f92f78 );
+    width: 75%;
+    height: 2.8rem;
+    border: none;
     border-radius: 2rem;
 }
 h2 {
@@ -172,4 +186,19 @@ h2 {
 }
 .p-med {
     font-size: 0.8rem;
+}
+.log-in {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #08AAFC;
+}
+
+.shadow-green {
+    background-color: #fff;
+    filter: drop-shadow(0px 5px 4px #d8f3e0);
+}
+.shadow-gray {
+    background-color: #fff;
+    filter: drop-shadow(0px 5px 4px #e9e9e9);
 }
