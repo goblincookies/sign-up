@@ -1,4 +1,5 @@
 let validName = false;
+let validPhone = false;
 
 // let labelName = "first & last name";
 let userName = document.querySelector("#user-name");
@@ -60,7 +61,7 @@ function validateField(e) {
             validateName(e);
             break;
         case "user-phone":
-            validateName(e);
+            validPhone = validatePhone(e);
             break;
         case "user-password-1":
             validateName(e);
@@ -79,4 +80,15 @@ function validateName(e) {
     validationPassed(e);
     return true;
     // FAIL
+}
+
+function validatePhone(e) {
+    let re = /^[\+]?[0-9]{0,3}\W?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    if(!re.test(e.target.value)){
+        validationFailed(e);
+        return false;
+    }
+    
+    validationPassed(e);
+    return true;
 }
