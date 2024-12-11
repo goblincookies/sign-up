@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="sign-up.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>sign up</title>
 </head>
@@ -30,18 +31,18 @@
             </div>
             <div class="sec2">
                 <form class="form-layout" action="#" method="post">
-                    <div class="field-border shadow-gray">
+                    <div class="field-border">
                         <img src="images/person.svg" alt="" class="field-icon">
                         
                         <div class="field">
-                            <label for="user-name">name</label>
+                            <label class="hidden" for="user-name">name</label>
                             <input class="field shift-up" type="text" name="user-name" id="user-name" placeholder="name">
                         </div>
                     </div>
                     <div class="field-border">
                         <img src="images/person.svg" alt="" class="field-icon">
                         <div class="field">
-                            <label for="user-email">email</label>
+                            <label class="hidden" for="user-email">email</label>
                             <input class="field shift-up" type="email" name="user-email" id="user-email" placeholder="name@aol.com">
                         </div>
                     </div>
@@ -50,7 +51,7 @@
                         <img src="images/person.svg" alt="" class="field-icon">
                         
                         <div class="field">
-                            <label for="user-phone">phone number</label>
+                            <label class="hidden" for="user-phone">phone number</label>
                             <input class="field shift-up" type="tel" name="user-phone" id="user-phone" placeholder="555-555-1234">
                         </div>
                     </div>
@@ -59,12 +60,12 @@
                         <img src="images/person.svg" alt="" class="field-icon">
                         
                         <div class="field">
-                            <label for="user-password-1">password</label>
+                            <label class="hidden" for="user-password-1">password</label>
                             <input class="field shift-up" type="password" name="user-password-1" id="user-password-1" placeholder="****">
                         </div>
                     </div>                     
     
-                    <button class="shadow" type="submit">Create Account</button>
+                    <button class="shadow-green" type="submit">Create Account</button>
                 </form>
             </div>
             <div class="sec3">
