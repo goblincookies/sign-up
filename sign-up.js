@@ -1,31 +1,54 @@
-let validName = false;
-let validPhone = false;
-
+// let validName = false;
+// let validPhone = false;
+// let validEmail = false;
+// let validPassword=false;
 // let labelName = "first & last name";
 let userName = document.querySelector("#user-name");
 let inputs = document.querySelectorAll("input");
-
+let signUpForm = document.querySelector("#sign-up-form");
 
 for (let i =0; i< inputs.length; i++) {
-    inputs[i].addEventListener("focusin", shiftLabel);
+    inputs[i].addEventListener("focusin", enteringData);
     inputs[i].addEventListener("focusout", validateField);
-
 }
 
-// userName.addEventListener("focusin", shiftLabel);
+signUpForm.addEventListener("submit", submitForm );
 
-function shiftLabel(e) {
-    let label = e.target.previousElementSibling;
-    let input = e.target;
+
+function submitForm(e) {
+    // e.preventDefault();
+    // let isValid = false;
+    let v = 0;
+
+    for (let i =0; i< inputs.length; i++) {
+        if (validate(inputs[i])) {
+            v+=1;
+        }
+    }
+    
+    // console.log(v, "are valid, out of", inputs.length);
+    if (v != inputs.length) { e.preventDefault(); }
+}
+
+function enteringData(e) {
+    shiftLabel(e.target);
+}
+
+function shiftLabel(eT) {
+    let label = eT.previousElementSibling;
+    let input = eT;
     label.classList.remove("hidden");
     label.classList.add("label-in");
     input.classList.remove("shift-up");
-    e.target.placeholder = "";
+    eT.placeholder = "";
 }
 
-function validationFailed(e) {
-    let label = e.target.previousElementSibling;
-    let fieldBorder = e.target.parentElement.parentElement;
+function validationFailed(eT) {
+    // shift label
+    shiftLabel(eT);
+
+    let label = eT.previousElementSibling;
+    let fieldBorder = eT.parentElement.parentElement;
 
     if (label.textContent.split("**").length < 2 ) {
         label.textContent += "**";
@@ -36,9 +59,9 @@ function validationFailed(e) {
     fieldBorder.classList.add("field-failed");
 }
 
-function validationPassed(e) {
-    let label = e.target.previousElementSibling;
-    let fieldBorder = e.target.parentElement.parentElement;
+function validationPassed(eT) {
+    let label = eT.previousElementSibling;
+    let fieldBorder = eT.parentElement.parentElement;
     if (label.textContent.split("**").length > 1 ) {
         label.textContent = label.textContent.split("**")[0];
     }
@@ -50,45 +73,22 @@ function validationPassed(e) {
 }
 
 function validateField(e) {
-    //
     console.log(e.target.name);
-
-    switch(e.target.name) {
-        case "user-name":
-            validName = validateName(e);
-            break;
-        case "user-email":
-            validateName(e);
-            break;
-        case "user-phone":
-            validPhone = validatePhone(e);
-            break;
-        case "user-password-1":
-            validateName(e);
-            break;
-    }
+    let valid = validate(e.target);
 }
 
-function validateName(e) {
-    // FAIL
-    console.log(e.target.value);
-    if (e.target.value == "") {
-        validationFailed(e);
+function validate(eT) {
+
+    if(eT.value.length <= 1) {
+        validationFailed(eT);
         return false;
     }
+    console.log("length", eT.checkValidity());
 
-    validationPassed(e);
-    return true;
-    // FAIL
-}
-
-function validatePhone(e) {
-    let re = /^[\+]?[0-9]{0,3}\W?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-    if(!re.test(e.target.value)){
-        validationFailed(e);
+    if (!eT.checkValidity()) {
+        validationFailed(eT);
         return false;
     }
-    
-    validationPassed(e);
+    validationPassed(eT);
     return true;
 }
